@@ -1,0 +1,36 @@
+<form id="contact" action="" method="post">
+    <fieldset>
+    	<legend>Contact</legend>
+            <div>
+                <label for="Name">Your Name: <span class="required">*</span>
+                    <?php 
+                        if($errors && in_array('name',$errors)) {
+                            echo "<span class='warning'>Please enter your name.</span>";
+                            }
+                    ?>
+                </label>
+                <input type="text" name="name" id="name" value="<?php if(isset($_POST['name'])) {echo htmlentities($_POST['name'], ENT_COMPAT, 'UTF-8');} ?>" size="20" maxlength="80" tabindex="1" />
+            </div>
+        	<div>
+                <label for="email">Email: <span class="required">*</span>
+                <?php 
+                        if($errors && in_array('email',$errors)) {
+                            echo "<span class='warning'>Please enter your email.</span>";
+                            }
+                    ?>
+                </label>
+                <input type="text" name="email" id="email" value="<?php if(isset($_POST['email'])) {echo htmlentities($_POST['email'], ENT_COMPAT, 'UTF-8');} ?>" size="20" maxlength="80" tabindex="2" />
+            </div>
+            <div>
+                <label for="comment">Your Message: <span class="required">*</span>
+                    <?php 
+                        if($errors && in_array('comment',$errors)) {
+                            echo "<span class='warning'>Please enter your message.</span>";
+                            }
+                    ?>
+                </label>
+                <div id="comment"><textarea name="comment" rows="10" cols="45" tabindex="3"><?php if(isset($_POST['comment'])) {echo htmlentities($_POST['comment'], ENT_COMPAT, 'UTF-8');} ?></textarea></div>
+            </div>
+    </fieldset>
+    <div><input type="submit" name="submit" value="Send Email" /></div>
+</form>

@@ -1,0 +1,23 @@
+<form id="comment-form" action="" method="post">
+    <fieldset>
+    	<legend>Leave a comment</legend>
+            <div>
+            <label for="name">Name: <span class="required">*</span></label>
+            <input type="text" name="name" id="name" value="" size="20" maxlength="80" tabindex="1" />
+        </div>
+        <div>
+                <label for="email">Email: <span class="required">*</span></label>
+                <input type="text" name="email" id="email" value="" size="20" maxlength="80" tabindex="2" />
+            </div>
+        <div>
+            <label for="comment">Your Comment: <span class="required">*</span></label>
+            <div id="comment"><textarea name="comment" rows="10" cols="50" tabindex="3"></textarea></div>
+        </div>
+        
+        <div>
+        <label for="captcha">Answer question: four plus one <span class="required">*</span></label>
+            <input type="text" name="captcha" id="captcha" value="" size="20" maxlength="10" tabindex="4" />
+        </div>
+    </fieldset>
+    <div><input type="submit" name="submit" value="Post Comment" /></div>
+</form>
